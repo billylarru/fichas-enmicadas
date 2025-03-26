@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.contenedor-principal {
+  text-align: center;
+}
+
+/* Botón de impresión */
+.boton-imprimir {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Panel de configuración */
+.config-panel {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background: #f9f9f9;
+}
+
+/* Contenedor de fichas dentro de la hoja A4 */
+.contenedor-fichas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 92mm);
+  gap: 4mm;
+  width: 210mm;
+  padding: 5mm;
+  background-color: white;
+}
+
+/* Mica (incluye el borde negro) */
+.mica {
+  width: 90mm;
+  height: 60mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Quita el fondo */
+  border: 1px dashed black; /* Borde discontinuo */
+}
+
+/* Recuadro interno con borde mostaza */
+.recuadro {
+  width: 86mm;
+  height: 56mm;
+  border: 2mm solid #ED7D31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+}
+
+/* Ajustes para impresión */
+@media print {
+  * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+
+  body {
+      background: white;
+      margin: 0;
+      padding: 0;
+  }
+
+  #print-area {
+      width: 210mm;
+      height: 297mm;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 92mm);
+      gap: 2mm;
+      padding: 5mm;
+      page-break-after: always;
+  }
+
+  .boton-imprimir {
+      display: none;
+  }
+
+  .config-panel {
+      display: none;
+  }
+
+  .tamanio-letra{
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: 'Deuxieme Rang';
+  src: local('Deuxieme Rang');
+}
+
+@font-face {
+  font-family: 'MamaeQueNosFaz';
+  src: local('MamaeQueNosFaz');
+}
+
+.silaba {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.silaba .primera {
+  font-family: 'Deuxieme Rang', sans-serif;
+  color: red;
+}
+
+.silaba .segunda {
+  font-family: 'MamaeQueNosFaz', sans-serif;
+  color: black;
+}
+
+.minuscula .primera, .minuscula .segunda {
+  font-family: 'MamaeQueNosFaz', sans-serif;
+  color: black;
+}
+
+.silaba-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.silaba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.iniciales {
+  position: absolute;
+  top: 100%; /* Coloca las iniciales justo debajo de la sílaba */
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  font-size: 24px; /* Ajusta según sea necesario */
+  font-weight: bold;
+  color: gray; /* Color predeterminado */
+}
