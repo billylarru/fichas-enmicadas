@@ -3,7 +3,7 @@ import  React, { useState, useRef } from 'react';
 import { usePDF } from 'react-to-pdf';
 
 const FichasPage = () => {
-    const textos = ["Ma", "Me", "Mi", "Mo", "Mu", "ma", "me", "mi", "mo", "mu"];
+    const [textos, setTextos] = useState(`Ma,Me,Mi,Mo,Mu,ma,me,mi,mo,mu`)
     const [fontSize, setFontSize] = useState(48);
     const [selectedLetter, setSelectedLetter] = useState(null);
     const [letterStyles, setLetterStyles] = useState({});
@@ -50,7 +50,15 @@ const FichasPage = () => {
     return (
         <div className="contenedor-principal">
             <button onClick={handlePrint} className="boton-imprimir">Imprimir</button>
-            {/* <button onClick={handleExportToPdf} className="boton-imprimir">Exportar PDF</button> */}
+            <button onClick={handleExportToPdf} className="boton-imprimir">Exportar PDF</button>
+            <label>Textos:
+            <input 
+                type="text" 
+                value={textos} 
+                onChange={(e) => setTextos(e.target.value)} 
+                placeholder="Ingrese iniciales"
+            />
+            </label>
             <label className="tamanio-letra">
                 Tamaño de letra:
                 <input 
@@ -139,7 +147,7 @@ const FichasPage = () => {
 )}
 
             <div id="print-area" className="contenedor-fichas"  ref={targetRef}>
-                {textos.map((texto, index) => (
+                {textos.split(',').map((texto, index) => (
                     <div key={index} className="mica">
     <div className="recuadro">
         <div className="silaba-container">
