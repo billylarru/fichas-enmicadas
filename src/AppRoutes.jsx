@@ -3,7 +3,7 @@ import FichasPage from "./pages/FichasPage";
 
 const AppRoutes = () => {
   return (
-     <Router>
+    <Router basename="/fichas-enmicadas">
         <Routes>
           <Route path="/" element={<FichasPage />} />
         </Routes>
