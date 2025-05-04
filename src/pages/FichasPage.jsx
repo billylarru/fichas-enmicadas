@@ -4,9 +4,9 @@ import { usePDF } from 'react-to-pdf';
 
 const FichasPage = () => {
     const [textos, setTextos] = useState(`Ma,Me,Mi,Mo,Mu,ma,me,mi,mo,mu`)
-    const [fontSize, setFontSize] = useState(48);
+    const [fontSize, setFontSize] = useState(120);
     const [selectedLetter, setSelectedLetter] = useState(null);
-    const [letterStyles, setLetterStyles] = useState({});
+    const [letterStyles, setLetterStyles] = useState({inicial: {marginTop: -46}});
     const [initials, setInitials] = useState("I.J.L.B.");
     const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
     const handlePrint = () => {
@@ -127,20 +127,22 @@ const FichasPage = () => {
                 <option value="MamaeQueNosFaz">MamaeQueNosFaz</option>
             </select>
         </label>
-
-        <label>Margen superior:
-            <input 
-                type="text" 
-                value={parseInt(letterStyles["inicial"]?.marginTop) || "24"}
-                onChange={(e) => handleInitialStyleChange("marginTop", e.target.value + "px")}
-            />
-        </label>
         <label>Texto:
             <input 
                 type="text" 
                 value={initials} 
                 onChange={(e) => setInitials(e.target.value)} 
                 placeholder="Ingrese iniciales"
+            />
+        </label>
+        <label>Margen superior:
+            <input 
+                type="range" 
+                className="form-range"
+                min="-100"
+                max="100"
+                value={parseInt(letterStyles["inicial"]?.marginTop) || "-46"}
+                onChange={(e) => handleInitialStyleChange("marginTop", e.target.value + "px")}
             />
         </label>
     </div>
