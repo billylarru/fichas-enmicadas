@@ -157,7 +157,7 @@ const FichasPage = () => {
             <span className={`silaba ${texto.charAt(0) === texto.charAt(0).toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px` }}>
                 <span 
                     className="primera" 
-                    style={letterStyles[`${index}-primera`] || { color: "#C00000" }}
+                    style={(letterStyles[`${index}-primera`] || { color: (texto.charAt(0) === texto.charAt(0).toUpperCase() ? '#C00000' : '#2F5496') })}
                     onClick={() => handleLetterClick(index, "primera")}
                 >
                     {texto.charAt(0)}
