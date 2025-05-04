@@ -65,6 +65,9 @@ const FichasPage = () => {
     };
     
     const handleImportConfig = (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+    
         const fileReader = new FileReader();
         fileReader.onload = (e) => {
             try {
@@ -76,8 +79,11 @@ const FichasPage = () => {
             } catch (error) {
                 alert("Error al importar la configuración: " + error.message);
             }
+    
+            // 🔧 Reiniciar el input para permitir reimportar el mismo archivo
+            event.target.value = null;
         };
-        fileReader.readAsText(event.target.files[0]);
+        fileReader.readAsText(file);
     };
 
     return (
