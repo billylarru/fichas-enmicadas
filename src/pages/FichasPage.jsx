@@ -47,10 +47,53 @@ const FichasPage = () => {
         }));
     };
 
+    const handleExportConfig = () => {
+        const config = {
+            textos,
+            fontSize,
+            letterStyles,
+            initials
+        };
+    
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(config, null, 2));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "fichas-config.json");
+        document.body.appendChild(downloadAnchorNode);
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    };
+    
+    const handleImportConfig = (event) => {
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            try {
+                const importedConfig = JSON.parse(e.target.result);
+                setTextos(importedConfig.textos || '');
+                setFontSize(importedConfig.fontSize || 120);
+                setLetterStyles(importedConfig.letterStyles || {});
+                setInitials(importedConfig.initials || '');
+            } catch (error) {
+                alert("Error al importar la configuración: " + error.message);
+            }
+        };
+        fileReader.readAsText(event.target.files[0]);
+    };
+
     return (
         <div className="contenedor-principal">
             <button onClick={handlePrint} className="boton-imprimir">Imprimir</button>
             <button onClick={handleExportToPdf} className="boton-imprimir">Exportar PDF</button>
+            <button onClick={handleExportConfig} className="boton-imprimir">Exportar Configuración</button>
+            <label className="boton-imprimir">
+                Importar Configuración
+                <input
+                    type="file"
+                    accept="application/json"
+                    style={{ display: 'none' }}
+                    onChange={handleImportConfig}
+                />
+            </label>
             <label>Textos:
             <input 
                 type="text" 
