@@ -6,7 +6,7 @@ const FichasPage = () => {
     const [textos, setTextos] = useState(`Ma,Me,Mi,Mo,Mu,ma,me,mi,mo,mu`)
     const [fontSize, setFontSize] = useState(120);
     const [selectedLetter, setSelectedLetter] = useState(null);
-    const [letterStyles, setLetterStyles] = useState({inicial: {marginTop: -46}});
+    const [letterStyles, setLetterStyles] = useState({inicial: {marginTop: -34, fontFamily: 'Deuxieme Rang'}});
     const [initials, setInitials] = useState("I.J.L.B.");
     const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
     const handlePrint = () => {
