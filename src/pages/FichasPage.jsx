@@ -5,6 +5,7 @@ import { usePDF } from 'react-to-pdf';
 const FichasPage = () => {
     const [textos, setTextos] = useState(`Ma,Me,Mi,Mo,Mu,ma,me,mi,mo,mu`)
     const [fontSize, setFontSize] = useState(120);
+    const [silabaMarginTop, setSilabaMarginTop] = useState(0);
     const [selectedLetter, setSelectedLetter] = useState(null);
     const [letterStyles, setLetterStyles] = useState({inicial: {marginTop: -34, fontFamily: 'Deuxieme Rang'}});
     const [initials, setInitials] = useState("I.J.L.B.");
@@ -116,6 +117,17 @@ const FichasPage = () => {
                     onChange={(e) => setFontSize(e.target.value)} 
                 />
             </label>
+            <label className="tamanio-letra">
+                Margen silaba:
+                <input 
+                    type="range" 
+                    className="form-range"
+                    min="-100"
+                    max="100"
+                    value={silabaMarginTop} 
+                    onChange={(e) => setSilabaMarginTop(e.target.value)} 
+                />
+            </label>
             {selectedLetter && (
                 <div className="config-panel">
                     <label>Color:
@@ -203,7 +215,7 @@ const FichasPage = () => {
     <div className="recuadro">
         <div className="silaba-container">
             {/* Sílabas */}
-            <span className={`silaba ${texto.charAt(0) === texto.charAt(0).toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px` }}>
+            <span className={`silaba ${texto.charAt(0) === texto.charAt(0).toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px`, marginTop: `${silabaMarginTop}px`}}>
                 <span 
                     className="primera" 
                     style={(letterStyles[`${index}-primera`] || { color: (texto.charAt(0) === texto.charAt(0).toUpperCase() ? '#C00000' : '#2F5496') })}
