@@ -154,10 +154,10 @@ const FichasPage = () => {
     <div className="recuadro">
         <div className="silaba-container">
             {/* Sílabas */}
-            <span className={`silaba ${texto === texto.toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px` }}>
+            <span className={`silaba ${texto.charAt(0) === texto.charAt(0).toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px` }}>
                 <span 
                     className="primera" 
-                    style={letterStyles[`${index}-primera`] || { color: "#2F5496" }}
+                    style={letterStyles[`${index}-primera`] || { color: "#C00000" }}
                     onClick={() => handleLetterClick(index, "primera")}
                 >
                     {texto.charAt(0)}
