@@ -52,6 +52,7 @@ const FichasPage = () => {
         const config = {
             textos,
             fontSize,
+            silabaMarginTop,
             letterStyles,
             initials
         };
@@ -77,6 +78,7 @@ const FichasPage = () => {
                 setFontSize(importedConfig.fontSize || 120);
                 setLetterStyles(importedConfig.letterStyles || {});
                 setInitials(importedConfig.initials || '');
+                setSilabaMarginTop(importedConfig.silabaMarginTop || 0);
             } catch (error) {
                 alert("Error al importar la configuración: " + error.message);
             }
