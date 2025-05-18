@@ -73,6 +73,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, 86mm);
       gap: 0mm;
+      grid-auto-rows: 56mm;
       padding: 5mm;
       page-break-after: always;
   }
