@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent; /* Quita el fondo */
-  border: 1px dashed black; /* Borde discontinuo */
+  /*border: 1px dashed black;  Borde discontinuo*/
 }
 
 /* Recuadro interno con borde mostaza */
@@ -52,6 +52,7 @@
   font-weight: bold;
   text-align: center;
   background-color: white;
+  outline: 1px dashed black; /
 }
 
 /* Ajustes para impresión */
