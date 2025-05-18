@@ -23,8 +23,8 @@
 /* Contenedor de fichas dentro de la hoja A4 */
 .contenedor-fichas {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 92mm);
-  gap: 4mm;
+  grid-template-columns: repeat(auto-fill, 86mm);
+  gap: 0mm;
   width: 210mm;
   padding: 5mm;
   background-color: white;
@@ -32,8 +32,8 @@
 
 /* Mica (incluye el borde negro) */
 .mica {
-  width: 90mm;
-  height: 60mm;
+  width: 86mm;
+  height: 56mm;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,8 +71,8 @@
       width: 210mm;
       height: 297mm;
       display: grid;
-      grid-template-columns: repeat(auto-fill, 92mm);
-      gap: 2mm;
+      grid-template-columns: repeat(auto-fill, 86mm);
+      gap: 0mm;
       padding: 5mm;
       page-break-after: always;
   }
