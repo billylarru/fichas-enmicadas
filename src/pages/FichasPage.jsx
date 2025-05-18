@@ -219,14 +219,14 @@ const FichasPage = () => {
             {/* Sílabas */}
             <span className={`silaba ${texto.charAt(0) === texto.charAt(0).toUpperCase() ? 'mayuscula' : 'minuscula'}`} style={{ fontSize: `${fontSize}px`, marginTop: `${silabaMarginTop}px`}}>
                 <span 
-                    className="primera" 
+                    className={`primera ${selectedLetter?.index === index && selectedLetter?.part === "primera" ? "selected-letter" : ""}`}
                     style={(letterStyles[`${index}-primera`] || { color: (texto.charAt(0) === texto.charAt(0).toUpperCase() ? '#C00000' : '#2F5496') })}
                     onClick={() => handleLetterClick(index, "primera")}
                 >
                     {texto.charAt(0)}
                 </span>
                 <span 
-                    className="segunda" 
+                    className={`segunda ${selectedLetter?.index === index && selectedLetter?.part === "segunda" ? "selected-letter" : ""}`}
                     style={letterStyles[`${index}-segunda`] || { color: "#2F5496" }}
                     onClick={() => handleLetterClick(index, "segunda")}
                 >
@@ -236,7 +236,7 @@ const FichasPage = () => {
             
             {/* Inicial debajo */}
             <span 
-                className="iniciales"
+                className={`iniciales ${selectedLetter?.part === "inicial" ? "selected-letter" : ""}`}
                 style={letterStyles["inicial"] || { fontSize: "24px", color: "gray" }}
                 onClick={() => setSelectedLetter({ part: "inicial" })}
             >
