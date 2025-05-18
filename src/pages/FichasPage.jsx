@@ -103,7 +103,7 @@ const FichasPage = () => {
                     onChange={handleImportConfig}
                 />
             </label>
-            <label>Textos:
+            <label className="boton-imprimir">Textos:
             <input 
                 type="text" 
                 value={textos} 
