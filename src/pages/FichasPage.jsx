@@ -157,6 +157,7 @@ const FichasPage = () => {
                             <option value="Deuxieme Rang">Deuxieme Rang</option>
                             <option value="MamaeQueNosFaz">MamaeQueNosFaz</option>
                             <option value="Playwrite PE">Playwrite Perú</option>
+                            <option value="Playwrite CZ">Playwrite CZ</option>
                         </select>
                     </label>
                 </div>
