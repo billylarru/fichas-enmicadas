@@ -68,6 +68,11 @@
       padding: 0;
   }
 
+  body.reflejado{
+      transform: scaleX(-1);
+      transform-origin: center;
+  }
+
   #print-area {
       width: 210mm;
       height: 297mm;

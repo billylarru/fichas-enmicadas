@@ -11,7 +11,16 @@ const FichasPage = () => {
     const [initials, setInitials] = useState("I.J.L.B.");
     const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
     const handlePrint = () => {
+        document.body.classList.remove('reflejado');
         window.print();
+    };
+
+    const handleReversePrint = () => {
+        document.body.classList.add('reflejado');
+        window.print();
+        setTimeout(() => {
+            document.body.classList.remove('reflejado');
+        }, 1000); // quita la clase luego de imprimir
     };
 
     const handleExportToPdf = () => {
@@ -92,6 +101,7 @@ const FichasPage = () => {
     return (
         <div className="contenedor-principal">
             <button onClick={handlePrint} className="boton-imprimir">Imprimir</button>
+            <button onClick={handleReversePrint} className="boton-imprimir">Imprimir Reflejado</button>
             <button onClick={handleExportToPdf} className="boton-imprimir"> Exportar PDF</button>
             <button onClick={handleExportConfig} className="boton-imprimir btn btn-success"><i className='fa fa-file'></i> <i class="bi bi-file-earmark-arrow-down"></i> Exportar Configuración</button>
             <label className="boton-imprimir btn btn-warning">
