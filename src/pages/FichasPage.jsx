@@ -17,9 +17,12 @@ const FichasPage = () => {
 
     const handleReversePrint = () => {
         document.body.classList.add('reflejado');
+        const micaElements = document.querySelectorAll('.mica');
+        micaElements.forEach(el => el.classList.add('cancelar-reflejo'));
         window.print();
         setTimeout(() => {
             document.body.classList.remove('reflejado');
+            micaElements.forEach(el => el.classList.remove('cancelar-reflejo'));
         }, 1000); // quita la clase luego de imprimir
     };
 

@@ -73,6 +73,10 @@
       transform-origin: center;
   }
 
+  .reflejado .cancelar-reflejo {
+      transform: scaleX(-1); /* cancelar el reflejo solo en el texto de clase .inicial */
+  }
+
   #print-area {
       width: 210mm;
       height: 297mm;
