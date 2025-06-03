@@ -103,9 +103,9 @@ const FichasPage = () => {
             <button onClick={handlePrint} className="boton-imprimir">Imprimir</button>
             <button onClick={handleReversePrint} className="boton-imprimir">Imprimir Reflejado</button>
             <button onClick={handleExportToPdf} className="boton-imprimir"> Exportar PDF</button>
-            <button onClick={handleExportConfig} className="boton-imprimir btn btn-success"><i className='fa fa-file'></i> <i class="bi bi-file-earmark-arrow-down"></i> Exportar Configuración</button>
+            <button onClick={handleExportConfig} className="boton-imprimir btn btn-success"><i className='fa fa-file'></i> <i className="bi bi-file-earmark-arrow-down"></i> Exportar Configuración</button>
             <label className="boton-imprimir btn btn-warning">
-                <i class="bi bi-file-earmark-arrow-up"></i> Importar Configuración
+                <i className="bi bi-file-earmark-arrow-up"></i> Importar Configuración
                 <input
                     type="file"
                     accept="application/json"
