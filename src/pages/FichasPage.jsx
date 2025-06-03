@@ -3,7 +3,7 @@ import  React, { useState, useRef } from 'react';
 import { usePDF } from 'react-to-pdf';
 
 const FichasPage = () => {
-    const [textos, setTextos] = useState(`Ma,Me,Mi,Mo,Mu,ma,me,mi,mo,mu`)
+    const [textos, setTextos] = useState(`Ma,ma,Me,me,Mi,mi,Mo,mo,Mu,mu`)
     const [fontSize, setFontSize] = useState(120);
     const [silabaMarginTop, setSilabaMarginTop] = useState(0);
     const [selectedLetter, setSelectedLetter] = useState(null);
