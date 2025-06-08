@@ -69,7 +69,7 @@
   }
 
   body.reflejado{
-      transform: translate(26mm, -1mm);;
+      transform: translate(25mm, -1mm);;
       transform-origin: center;
   }
 
@@ -84,7 +84,10 @@
       grid-template-columns: repeat(auto-fill, 86mm);
       gap: 0mm;
       grid-auto-rows: 56mm;
-      padding: 5mm;
+      padding-top: 8mm;
+      padding-left: 5mm;
+      padding-right: 5mm;
+      padding-bottom: 5mm;
       page-break-after: always;
   }
 
