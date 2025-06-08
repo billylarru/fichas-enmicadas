@@ -69,13 +69,13 @@
   }
 
   body.reflejado{
-      transform: scaleX(-1) translate(2mm, -1mm);;
+      transform: translate(26mm, -1mm);;
       transform-origin: center;
   }
 
-  .reflejado .cancelar-reflejo {
-      transform: scaleX(-1); /* cancelar el reflejo solo en el texto de clase .inicial */
-  }
+  /* .reflejado .cancelar-reflejo {
+      transform: scaleX(-1);
+  } */
 
   #print-area {
       width: 210mm;
