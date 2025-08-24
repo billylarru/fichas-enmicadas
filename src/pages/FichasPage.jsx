@@ -174,6 +174,7 @@ const FichasPage = () => {
                             <option value="Playwrite DE LA">Playwrite DE LA</option>
                             <option value="Playwrite BE VLG">Playwrite BE VLG</option>
                             <option value="Playwrite RO">Playwrite RO</option>
+                            <option value="Playwrite BR">Playwrite BR</option>
                         </select>
                     </label>
                 </div>
